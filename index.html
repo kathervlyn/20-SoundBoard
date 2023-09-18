@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundBoard</title>
+    <style>
+        div {
+            height: 150px;
+            width: 150px;
+            border: 2px solid gray;
+        }
+
+        .one {
+            background-color: purple;
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+        .two {
+            background-color: lightcyan;
+            font-size: x-large;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one" onclick="play('relax')">Relax
+        <audio id="relax" class="audio" src="/Audio/just-relax-11157.mp3"></audio>
+    </div><br>
+
+    <div class="two" onclick="play('sedative')">Sedative
+        <audio id="sedative" class="audio" src="/Audio/sedative-110241.mp3"></audio>
+    </div>
+
+    <script>
+        let vid = document.getElementById('relax');
+        vid.volume = 0.2;
+
+        let vid2 = document.getElementById('sedative');
+        vid2.volume = 0.2;
+
+        function play(selectedSound) {
+            document.getElementById(selectedSound).play();
+        }
+    </script>
+</body>
+
+</html>
